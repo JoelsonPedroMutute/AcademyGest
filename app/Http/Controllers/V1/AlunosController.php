@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\V1;
 
 use App\Http\Controllers\Controller;
-use App\Models\Curso;
+use App\Models\Aluno;
 use Illuminate\Http\Request;
 
-class CursosController extends Controller
+class AlunosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class CursosController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Curso $curso)
+    public function show(Aluno $aluno)
     {
         //
     }
@@ -35,7 +35,7 @@ class CursosController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Curso $curso)
+    public function update(Request $request, Aluno $aluno)
     {
         //
     }
@@ -43,7 +43,7 @@ class CursosController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Curso $curso)
+    public function destroy(Aluno $aluno)
     {
         //
     }
