@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('disciplina_id')->constrained()->onDelete('cascade');
 
             $table->string('nome')->index();
-            $table->date('data_letivo')->nullable();
+            $table->date('ano_letivo')->nullable();
 
             $table->string('semestre')->nullable();
             $table->unsignedSmallInteger('capacidade')->nullable();

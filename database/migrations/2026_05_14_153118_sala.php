@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('bloco')->nullable();
             $table->integer('capacidade')->nullable();
 
+            $table->enum('status', ['disponível',  'ocupada', 'mantenção'])->default('disponível');
+
             $table->enum('tipo', [
                 'normal',
                 'laboratorio',

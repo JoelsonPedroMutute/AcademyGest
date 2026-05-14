@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('nome')->index();
-            $table->string('codigo')->unique()->nullable();
+            $table->unsignedSmallInteger('duracao')->nullable();
             $table->text('descricao')->nullable();
 
             $table->timestamps();
