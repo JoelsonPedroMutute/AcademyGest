@@ -6,12 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 
-class Alunos extends Model
+class Docentes extends Model
 {
     use HasFactory, Notifiable;
     protected $fillable = [
         'user_id',
         'data_nascimento',
+        'especialidade',
     ];
 
     public function user()
@@ -19,8 +20,8 @@ class Alunos extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function matriculas()
+    public function disciplinas()
     {
-        return $this->hasMany(Matriculas::class);
+        return $this->hasMany(Disciplinas::class);
     }
 }
