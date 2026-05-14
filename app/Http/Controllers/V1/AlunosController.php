@@ -5,8 +5,10 @@ namespace App\Http\Controllers\V1;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class RelatoriosController extends Controller
+class AlunosController extends Controller
 {
+    protected AlunosService $alunosService;
+    $this->alunosService = new AlunosService();
     /**
      * Display a listing of the resource.
      */

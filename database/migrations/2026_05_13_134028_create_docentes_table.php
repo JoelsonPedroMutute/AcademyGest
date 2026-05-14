@@ -1,38 +1,32 @@
-<?php
+        <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+        use Illuminate\Database\Migrations\Migration;
+        use Illuminate\Database\Schema\Blueprint;
+        use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
-    {
-        Schema::create('docentes', function (Blueprint $table) {
-            $table->id();
+        return new class extends Migration
+        {
+            /**
+             * Run the migrations.
+             */
+            public function up(): void
+            {
+                Schema::create('docentes', function (Blueprint $table) {
+                    $table->id();
 
-            $table->string('nome')->index();
-            $table->string('email')->unique();
-            $table->string('telefone', 20)->nullable();
-            $table->string('endereco')->nullable();
-            $table->string('bi')->unique()->nullable();
+                    $table->foreignId('user_id')->constrained()->onDelete('cascade');
+                    $table->date('data_nascimento')->nullable();
+                    $table->string('especialidade')->nullable();
 
-            $table->enum('genero', ['M', 'F'])->nullable();
+                    $table->timestamps();
+                });
+            }
 
-            $table->string('especialidade')->nullable();
-
-            $table->timestamps();
-        });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('docentes');
-    }
-};
+            /**
+             * Reverse the migrations.
+             */
+            public function down(): void
+            {
+                Schema::dropIfExists('docentes');
+            }
+        };

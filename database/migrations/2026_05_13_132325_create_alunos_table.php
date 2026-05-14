@@ -14,19 +14,8 @@ return new class extends Migration
         Schema::create('alunos', function (Blueprint $table) {
             $table->id();
 
-            $table->string('nome')->index();
-            $table->string('email')->unique();
-
-            $table->enum('genero', ['M', 'F'])->nullable();
-
-            $table->string('telefone', 20)->nullable();
-            $table->string('endereco')->nullable();
-
-            $table->string('bi')->unique()->nullable();
-
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->date('data_nascimento')->nullable();
-
-            $table->enum('status', ['ativo', 'inativo'])->default('ativo');
 
             $table->timestamps();
         });
